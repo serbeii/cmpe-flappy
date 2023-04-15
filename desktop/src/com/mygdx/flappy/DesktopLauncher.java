@@ -9,6 +9,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
+                config.setWindowedMode(500, 900);
+		config.useVsync(true);
 		config.setTitle("Flappy");
 		new Lwjgl3Application(new Flappy(), config);
 	}
