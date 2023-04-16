@@ -12,17 +12,19 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class Gameplay implements Screen {
     final Flappy game;
     final Sound jump;
+    private Texture bg;
     private Bird bird;
     public Gameplay(final Flappy game) {
         this.game = game;
         bird = new Bird();
+        bg = new Texture("bird.jpg");
         jump = Gdx.audio.newSound(Gdx.files.internal("hit.mp3"));
     }
     @Override
     public void render(float delta) {
         ScreenUtils.clear(1, 0, 0, 1);
 		game.batch.begin();
-		game.batch.draw(game.bg,0,0,500, 900, 0, 1, 1, 0);
+		game.batch.draw(bg,0,0,500, 900, 0, 1, 1, 0);
 		game.batch.draw(bird.getBird(),30,bird.getHeight(),80, 80, 0, 1, 1, 0);
 		game.batch.end();
             handleInput();
@@ -60,7 +62,7 @@ public class Gameplay implements Screen {
     }
     @Override
     public void dispose() {
-        game.bg.dispose();
+        bg.dispose();
         jump.dispose();
     }
 

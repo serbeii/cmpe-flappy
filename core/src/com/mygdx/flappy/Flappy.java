@@ -11,13 +11,12 @@ public class Flappy extends Game {
 	public SpriteBatch batch;
         public BitmapFont font;
 	//public Texture owl;
-        public Texture bg;
+        
         //public Texture pipe;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
                 font = new BitmapFont();
-                bg = new Texture("bird.jpg");
                 this.setScreen(new MainMenuScreen(this));
 	}
         
@@ -31,7 +30,6 @@ public class Flappy extends Game {
 	@Override
 	public void dispose () {
 		batch.dispose();
-                bg.dispose();
                 font.dispose();
 	}
 }

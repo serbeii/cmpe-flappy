@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.utils.ScreenUtils;
 
 public class EndScreen implements Screen{
     final Flappy game;
@@ -18,21 +19,20 @@ public class EndScreen implements Screen{
             @Override
             public boolean keyDown(int keyCode) {
                 if (keyCode == Input.Keys.SPACE) {
-                    game.setScreen(new Gameplay(game));
+                    game.setScreen(new MainMenuScreen(game));
                 }
                 return true;
             }
         });
     }
-    public void render(){
-        game.batch.begin();
-        game.batch.draw(bird.getBird(), 0, 0, 500, 900, 0, 0, 0, 0, true, true);
-        game.batch.end();
-    }
-
     @Override
-    public void render(float delta) {
-
+    public void render(float delta){
+        ScreenUtils.clear(0, 0, 0.2f, 1);
+        game.batch.begin();
+        game.batch.draw(bird.getBird(), 0, 0, 500, 900, 0, 1, 1, 0);
+        game.font.draw(game.batch, "You lose. ", 100, 150);
+        game.font.draw(game.batch, "Press spacebar to go back to the main screen.", 100, 100);
+        game.batch.end();
     }
 
     @Override
