@@ -67,7 +67,7 @@ public class Gameplay implements Screen {
     }
 
     private void checkStatus() {
-        if(bird.getHeight() < 0){
+        if(bird.getHeight() <= -40){
             game.setScreen(new EndScreen(game));
             dispose();
         }

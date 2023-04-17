@@ -2,6 +2,5 @@ Add pipes maybe draw rectangles to reduce the amount of work required
 Make the background infinitely scroll
 Reduce the amount of public objects/functions and replace them with getters
 Add proper textures. Probably duke as the bird.
-FIX: sometimes the bird doesnt go below y=0 fix that or change the way losing is implemented.
 Optimize the engine by disposing any asset unused
 Optimize the code

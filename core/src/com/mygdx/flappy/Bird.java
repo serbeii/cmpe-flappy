@@ -18,14 +18,16 @@ public class Bird {
         velocity.y = 330;
     }
     public void render(float delta){
-        if (height > -10){
+        if (height > -40){
             velocity.add(0,GRAVITY,0);
+        }
+        if (height > 860){
+            height = 860;
+            velocity.y = 0;
         }
         velocity.scl(delta);
         height += velocity.y;
         velocity.scl(1/delta);
-        if (height < -10){
-            height = 0;
-        }
+        
     }
 }
