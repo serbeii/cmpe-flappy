@@ -1,12 +1,12 @@
 package com.mygdx.flappy;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
     private static final int GRAVITY = -15;
     private Texture bird = new Texture("owl.jpg");
-    private Vector3 velocity = new Vector3(0,0,0);
+    private Vector2 velocity = new Vector2(0,0);
     private float height = 370;
     public float getHeight(){
         return height;
@@ -19,8 +19,9 @@ public class Bird {
     }
     public void render(float delta){
         if (height > -40){
-            velocity.add(0,GRAVITY,0);
+            velocity.add(0,GRAVITY);
         }
+        // else if might work
         if (height > 860){
             height = 860;
             velocity.y = 0;

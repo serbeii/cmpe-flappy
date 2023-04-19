@@ -26,10 +26,13 @@ public class Gameplay implements Screen {
         ScreenUtils.clear(1, 0, 0, 1);
 		game.batch.begin();
 		game.batch.draw(bg,0,0,500, 900, 0, 1, 1, 0);
+                game.batch.draw(pipe.getPipe(),pipe.getTopPipePos().x,pipe.getTopPipePos().y,120, 300, 0, 1, 1, 0);
+                game.batch.draw(pipe.getPipe(),pipe.getBottomPipePos().x,pipe.getBottomPipePos().y,120, 300, 0, 1, 1, 0);
 		game.batch.draw(bird.getBird(),30,bird.getHeight(),80, 80, 0, 1, 1, 0);
 		game.batch.end();
             handleInput();
             bird.render(delta);
+            pipe.render(delta);
             checkStatus();
     }
     public void handleInput(){
