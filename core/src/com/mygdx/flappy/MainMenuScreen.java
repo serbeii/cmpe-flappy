@@ -7,7 +7,7 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MainMenuScreen implements Screen {
-    final Flappy game;
+    private final Flappy game;
     private Bird bird;
     public MainMenuScreen(final Flappy game) {
         this.game = game;

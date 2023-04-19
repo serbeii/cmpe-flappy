@@ -6,16 +6,17 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Gameplay implements Screen {
-    final Flappy game;
-    final Sound jump;
+    private final Flappy game;
+    private final Sound jump;
+    private Pipe pipe;
     private Texture bg;
     private Bird bird;
     public Gameplay(final Flappy game) {
         this.game = game;
+        pipe = new Pipe();
         bird = new Bird();
         bg = new Texture("bird.jpg");
         jump = Gdx.audio.newSound(Gdx.files.internal("hit.mp3"));

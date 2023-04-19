@@ -7,7 +7,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class EndScreen implements Screen{
-    final Flappy game;
+    private final Flappy game;
     private Bird bird;
     public EndScreen(final Flappy game){
         this.game = game;
