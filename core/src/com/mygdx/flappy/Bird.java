@@ -1,6 +1,7 @@
 package com.mygdx.flappy;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
@@ -8,6 +9,7 @@ public class Bird {
     private Texture bird = new Texture("owl.jpg");
     private Vector2 velocity = new Vector2(0,0);
     private float height = 370;
+    private Rectangle hitbox = new Rectangle(30, 450, 80, 80);
     public float getHeight(){
         return height;
     }
@@ -17,7 +19,11 @@ public class Bird {
     public void fly(){
         velocity.y = 330;
     }
+    public Rectangle birdHitbox(){
+        return hitbox;
+    }
     public void render(float delta){
+        hitbox.y = height;
         if (height > -40){
             velocity.add(0,GRAVITY);
         }
