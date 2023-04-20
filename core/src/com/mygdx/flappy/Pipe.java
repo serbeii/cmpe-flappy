@@ -25,9 +25,10 @@ public class Pipe {
     public int getScore(){
         return score;
     }
-    private void spawn(){
-        int opening = minOpening + rand.nextInt(50);
-        int mouth = rand.nextInt(450);
+    public void spawn(){
+        int opening = minOpening + rand.nextInt(101);
+        int mouth = rand.nextInt(300)+100;
+        bottomPipePos.y = mouth+opening;
         pipeMouth.x = mouth;
         pipeMouth.y = mouth+opening;
     }

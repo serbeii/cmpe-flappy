@@ -18,6 +18,7 @@ public class Gameplay implements Screen {
     public Gameplay(final Flappy game) {
         this.game = game;
         pipe = new Pipe();
+        pipe.spawn();
         bird = new Bird();
         bg = new Texture("bird.jpg");
         jump = Gdx.audio.newSound(Gdx.files.internal("hit.mp3"));
@@ -28,8 +29,8 @@ public class Gameplay implements Screen {
         ScreenUtils.clear(1, 0, 0, 1);
 		game.batch.begin();
 		game.batch.draw(bg,0,0,500, 900, 0, 1, 1, 0);
-                game.batch.draw(pipe.getPipe(),pipe.getTopPipePos().x,pipe.getTopPipePos().y,120, 300, 0, 1, 1, 0);
-                game.batch.draw(pipe.getPipe(),pipe.getBottomPipePos().x,pipe.getBottomPipePos().y,120, 300, 0, 1, 1, 0);
+                game.batch.draw(pipe.getPipe(),pipe.getTopPipePos().x,pipe.getTopPipePos().y,120, pipe.getHeight().x, 0, 1, 1, 0);
+                game.batch.draw(pipe.getPipe(),pipe.getBottomPipePos().x,pipe.getBottomPipePos().y,120, 900-pipe.getHeight().y,0, 1, 1, 0);
 		game.batch.draw(bird.getBird(),30,bird.getHeight(),80, 80, 0, 1, 1, 0);
                 game.font.draw(game.batch,String.valueOf(score),250,800);
 		game.batch.end();
