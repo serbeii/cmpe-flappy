@@ -1,6 +1,5 @@
-Add pipes maybe draw rectangles to reduce the amount of work required
 Make the background infinitely scroll
-Reduce the amount of public objects/functions and replace them with getters
 Add proper textures. Probably duke as the bird.
 Optimize the engine by disposing any asset unused
-Optimize the code
+clean up the code
+Find a way to properly bundle the binaries

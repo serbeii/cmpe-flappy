@@ -27,7 +27,9 @@ public class EndScreen implements Screen{
     }
     @Override
     public void render(float delta){
-        ScreenUtils.clear(0, 0, 0.2f, 1);
+        ScreenUtils.clear(0, 0, 0, 1);
+        game.camera.update();
+        game.batch.setProjectionMatrix(game.camera.combined);
         game.batch.begin();
         game.batch.draw(bird.getBird(), 0, 0, 500, 900, 0, 1, 1, 0);
         game.font.draw(game.batch, "You lose. ", 100, 150);
@@ -37,7 +39,7 @@ public class EndScreen implements Screen{
 
     @Override
     public void resize(int width, int height) {
-
+    game.viewport.update(width, height);
     }
 
     @Override

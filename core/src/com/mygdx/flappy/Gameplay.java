@@ -7,6 +7,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class Gameplay implements Screen {
     private final Flappy game;
@@ -28,7 +29,9 @@ public class Gameplay implements Screen {
     @Override
     public void render(float delta) {
         score = pipe.getScore();
-        ScreenUtils.clear(1, 0, 0, 1);
+        ScreenUtils.clear(0, 0, 0, 1);
+        game.camera.update();
+        game.batch.setProjectionMatrix(game.camera.combined);
 		game.batch.begin();
 		game.batch.draw(bg,0,0,500, 900, 0, 1, 1, 0);
                 game.batch.draw(pipe.getPipe(),pipe.getTopPipePos().x,pipe.getTopPipePos().y,120, 900-pipe.getHeight().y, 0, 1, 1, 0);
@@ -56,6 +59,7 @@ public class Gameplay implements Screen {
     }
     @Override
     public void resize(int width, int height) {
+        game.viewport.update(width, height);
     }
     @Override
     public void show() {
