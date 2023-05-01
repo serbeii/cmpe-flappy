@@ -1,6 +1,12 @@
 Add animations
 Make the background infinitely scroll
 Add proper textures. Probably duke as the bird.
-Optimize the engine by disposing any asset unused
-clean up the code
-Find a way to properly bundle the binaries
+Optimize the engine:
+	Dispose any asset unused
+	Try using public asset instead of getters
+	Maybe clean up the gameplay loop
+Test the pipe randomness
+Clean up the code:
+	Do NOT make Rectangle, Vector2 final!!!!
+Properly bundle the binaries
+Make a launcher script/applet
