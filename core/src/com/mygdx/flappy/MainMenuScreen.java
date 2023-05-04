@@ -8,7 +8,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MainMenuScreen implements Screen {
     private final Flappy game;
-    private Bird bird;
+    private final Bird bird;
     public MainMenuScreen(final Flappy game) {
         this.game = game;
         bird = new Bird();
@@ -49,6 +49,7 @@ public class MainMenuScreen implements Screen {
     @Override
     public void resume() {
     }
+    @Override
     public void dispose() {	
     }
 }

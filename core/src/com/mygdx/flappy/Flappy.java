@@ -4,7 +4,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -13,9 +12,7 @@ public class Flappy extends Game {
         public BitmapFont font;
         public OrthographicCamera camera;
         public static Viewport viewport;
-	//public Texture owl;
         
-        //public Texture pipe;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
