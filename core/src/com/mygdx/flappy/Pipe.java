@@ -1,12 +1,16 @@
 package com.mygdx.flappy;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import java.util.Random;
 
 public class Pipe {
-    private final Texture pipeTexture = new Texture("pipe.jpg");
+    private final Texture pipeTexture = new Texture("pipe.png.png");
+    private final Texture topPipeTexture = new Texture("topPipe.png");
+
     private Vector2 topPipePos = new Vector2(300, 550);
     private Vector2 bottomPipePos = new Vector2(300, 0);
     private Vector2 pipeMouth = new Vector2();
@@ -16,6 +20,7 @@ public class Pipe {
     private final int minOpening = 160;
     private Random rand = new Random();
     private int score = 0;
+    private final Sound scoreUp =  Gdx.audio.newSound(Gdx.files.internal("score.wav"));
     public Rectangle topPipeHit(){
     return topPipe;
 }
@@ -60,6 +65,13 @@ public class Pipe {
             spawn();
             xPos = 600;
         }
-        if(xPos == 20) score ++;
+        if(xPos == 20) {
+        	score ++;
+        	scoreUp.play();
+        }
+        
     }
+	public Texture getTopPipeTexture() {
+		return topPipeTexture;
+	}
 }

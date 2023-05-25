@@ -6,10 +6,11 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
     private static final int GRAVITY = -15;
-    private Texture bird = new Texture("owl.jpg");
+    private Texture bird = new Texture("kus.png");
     private Vector2 velocity = new Vector2(0,0);
     private float height = 370;
     private Rectangle hitbox = new Rectangle(30, 450, 80, 80);
+    private float rotation = 0;
     public float getHeight(){
         return height;
     }
@@ -24,6 +25,7 @@ public class Bird {
     }
     public void render(float delta){
         hitbox.y = height;
+        rotation -= 60*delta;
         if (height > -40){
             velocity.add(0,GRAVITY);
         }
@@ -37,4 +39,7 @@ public class Bird {
         velocity.scl(1/delta);
         
     }
+	public float getRotation() {
+		return rotation;
+	}
 }
