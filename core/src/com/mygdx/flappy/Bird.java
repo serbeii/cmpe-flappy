@@ -9,7 +9,7 @@ public class Bird {
     private Texture bird = new Texture("kus.png");
     private Vector2 velocity = new Vector2(0,0);
     private float height = 370;
-    private Rectangle hitbox = new Rectangle(30, 450, 80, 80);
+    private Rectangle hitbox = new Rectangle(40, 450, 60, 60);
     private float rotation = 0;
     public float getHeight(){
         return height;
@@ -24,7 +24,7 @@ public class Bird {
         return hitbox;
     }
     public void render(float delta){
-        hitbox.y = height;
+        hitbox.y = height+10;
         rotation -= 60*delta;
         if (height > -40){
             velocity.add(0,GRAVITY);

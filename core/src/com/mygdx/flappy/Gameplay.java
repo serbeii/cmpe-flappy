@@ -43,8 +43,8 @@ public class Gameplay implements Screen {
 				0,0, 80,80,
 				1, 1, 90,
 				30,(int) bird.getHeight(), 80,80,
-				false, false);
-                game.font.draw(game.batch,String.valueOf(score),250,800); */
+				false, false); */
+                game.font.draw(game.batch,String.valueOf(score),250,800);
 		game.batch.end();
             handleInput();
             bird.render(delta);
