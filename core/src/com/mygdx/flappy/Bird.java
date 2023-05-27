@@ -21,14 +21,13 @@ public class Bird {
     }
     public void fly(){
         velocity.y = 330;
-        rotation +=20; // Rotate bird downwards (clockwise)
+        rotation +=20; 
     }
     public Rectangle birdHitbox(){
         return hitbox;
     }
     public void render(float delta){
         hitbox.y = height+10;
-       // rotation -= 60*delta;
         if (height > -40){
             velocity.add(0,GRAVITY);
         }
@@ -42,7 +41,7 @@ public class Bird {
         velocity.scl(1/delta);
         
         if (velocity.y<0) {
-		    rotation += -70*delta; // Rotate bird upwards (counter-clockwise)
+		    rotation += -70*delta; 
 		} 
         if(rotation<-90) {
         	rotation = -90;
