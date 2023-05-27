@@ -12,6 +12,7 @@ public class DesktopLauncher {
                 config.setWindowedMode(500, 900);
 		config.useVsync(true);
 		config.setTitle("Flappy");
+		config.setWindowIcon("kus.png");
 		new Lwjgl3Application(new Flappy(), config);
 	}
 }

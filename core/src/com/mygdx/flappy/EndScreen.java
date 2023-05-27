@@ -31,7 +31,7 @@ public class EndScreen implements Screen{
         game.camera.update();
         game.batch.setProjectionMatrix(game.camera.combined);
         game.batch.begin();
-        game.batch.draw(bird.getBird(), 0, 0, 500, 900, 0, 1, 1, 0);
+        game.batch.draw(bird.getBirdTexture(), 0, 0, 500, 900, 0, 1, 1, 0);
         game.font.draw(game.batch, "You lose. ", 100, 150);
         game.font.draw(game.batch, "Press spacebar to go back to the main screen.", 100, 100);
         game.batch.end();

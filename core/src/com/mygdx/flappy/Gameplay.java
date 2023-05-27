@@ -38,7 +38,8 @@ public class Gameplay implements Screen {
 		game.batch.draw(bg,0,0,500, 900, 0, 1, 1, 0);
                 game.batch.draw(pipe.getTopPipeTexture(),pipe.getTopPipePos().x,pipe.getTopPipePos().y,120, 900-pipe.getHeight().y, 0, 1, 1, 0);
                 game.batch.draw(pipe.getPipe(),pipe.getBottomPipePos().x,pipe.getBottomPipePos().y,120, pipe.getHeight().x,0, 1, 1, 0);
-		game.batch.draw(bird.getBird(),30,bird.getHeight(),80, 80, 0, 1, 1, 0);
+		// game.batch.draw(bird.getBird(),30,bird.getHeight(),80, 80, 0, 1, 1, 0);
+                bird.getBird().draw(game.batch);
 		/*game.batch.draw(bird.getBird(), 30, bird.getHeight(),
 				0,0, 80,80,
 				1, 1, 90,
