@@ -23,7 +23,7 @@ public class Gameplay implements Screen {
         pipe = new Pipe();
         pipe.spawn();
         bird = new Bird();
-        bg = new Texture("bird.jpg");
+        bg = new Texture("background.png");
         jump = Gdx.audio.newSound(Gdx.files.internal("flap.mp3"));
         hit = Gdx.audio.newSound(Gdx.files.internal("hit.mp3"));
 
@@ -100,5 +100,8 @@ public class Gameplay implements Screen {
             collision = true;
         } 
     }
+	public int getScore() {
+		return score;
+	}
 
 }
