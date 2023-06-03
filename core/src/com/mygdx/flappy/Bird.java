@@ -41,10 +41,10 @@ public class Bird {
         velocity.scl(1/delta);
         
         if (velocity.y<0) {
-		    rotation += -70*delta; 
+		    rotation += -60*delta; 
 		} 
-        if(rotation<-90) {
-        	rotation = -90;
+        if(rotation<-75) {
+        	rotation = -75;
         }
         else if(rotation >45) {
         	rotation = 45;
